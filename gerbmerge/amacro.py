@@ -124,7 +124,7 @@ class ApertureMacroPrimitive:
       except:
         raise RuntimeError, 'Outline macro primitive has non-integer number of points'
 
-      if len(fields) != (3+2*N):
+      if len(fields) != (5+2*N):
         raise RuntimeError, 'Outline macro primitive has %d fields...expecting %d fields' % (len(fields), 3+2*N)
     else:
       if len(fields) != len(valids):
@@ -178,7 +178,7 @@ class ApertureMacroPrimitive:
       rotatethelem(self.parms, 5)
     elif self.code == 4:      # Outline: fields (2,3), (4,5), etc. must be rotated, the last field need not be incremented
       ix = 2
-      for pts in range(self.parms[1]):    # parms[1] is the number of points
+      for pts in range(self.parms[1]+1):    # parms[1] is the number of points
         rotatexypair(self.parms, ix)
         ix += 2
       #rotatethelem(self.parms, ix)

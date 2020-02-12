@@ -1,0 +1,40 @@
+# This layout merges a Hexapod and Proj1 boards into a single
+# panel. The layout demonstrates nested rows and columns. The
+# final arrangement looks like this (make sure you are looking
+# at this document with a fixed-width font like Courier):
+#
+#     +-----------------------------------------------------+
+#     |  Proj1  |  Proj1  |  Proj1  |  Proj1  |  Proj1 |    |
+#     |         |         |         |         |        |    |
+#     |         |         |         |         |        |    |
+#     +---------+---------+---------+---------+--------+    |
+#     |                                                     |
+#     |                                     +-------+-------+
+#     |                                     |   P   |   P   |
+#     +--------------------------------+    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |                                |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     |                                |    +-------+-------+
+#     |                                |    |   P   |   P   |
+#     |                                |    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |            Hexapod             |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     |                                |    +-------+-------+
+#     |                                |    |   P   |   P   |
+#     |                                |    |   r   |   r   |
+#     |                                |    |   o   |   o   |
+#     |                                |    |   j   |   j   |
+#     |                                |    |   1   |   1   |
+#     +--------------------------------+----+-------+-------+
+
+Row {              // First row has the hexapod and 2x3 panel of
+                   // rotated Proj1 jobs.
+  lclc
+  lclc Rotate90
+  Col {            // Could also write this as two separate 1x3 columns
+    lclc
+    lclc Rotate180
+  }
+}
